@@ -128,9 +128,9 @@ const CartBag = () => {
     <div className={classes.CartBar}>
       {/* product */}
       {products &&
-        products.map((item) => {
+        products.map((item, key) => {
           return (
-            <div className={classes.Product}>
+            <div className={classes.Product} key={key}>
               <div className={classes.ProductImageContainer}>
                 <img className={classes.ProductImage} src={item.img} alt="" />
               </div>
@@ -155,11 +155,12 @@ const CartBag = () => {
                           />
                         }
                       >
-                        {item.sizes.map((i) => {
+                        {item.sizes.map((i, key) => {
                           return (
                             <option
                               selected={item.size === i.size ? "selected" : ""}
                               value={i.size}
+                              key={key}
                             >
                               {i.size}
                             </option>
@@ -181,12 +182,13 @@ const CartBag = () => {
                           />
                         }
                       >
-                        {Qty.map((i) => {
+                        {Qty.map((i, key) => {
                           return (
                             <option
                               selected={
                                 item.quantity === i.size ? "selected" : ""
                               }
+                              key={key}
                               value={i}
                             >
                               {i}

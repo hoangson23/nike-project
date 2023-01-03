@@ -181,7 +181,7 @@ const Cart = (props) => {
               {/* BAG */}
               <CartBag />
             </Grid>
-            <Grid >
+            <Grid item md={4} xs={12} >
               <CartSumary />
             </Grid>
           </Grid>
